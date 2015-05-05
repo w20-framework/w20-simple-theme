@@ -1,0 +1,27 @@
+{
+    "name": "w20-simple-theme",
+    "version": "1.0.0-M1",
+    "description": "W20 simple theme",
+    "main": "gruntfile.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/seedstack/w20-simple-theme.git"
+    },
+    "keywords": [
+        "w20",
+        "theme"
+    ],
+    "author": "Adrien LAUER",
+    "license": "Mozilla Public License, version 2.0",
+    "bugs": {
+        "url": "https://github.com/seedstack/w20-simple-theme/issues"
+    },
+    "scripts": {
+        "test": ""
+    },
+    "devDependencies": {
+        "grunt": "~0.4.5",
+        "grunt-contrib-jshint": "~0.10",
+        "jit-grunt": "~0.9.1"
+    }
+}
