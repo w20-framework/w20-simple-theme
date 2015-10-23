@@ -8,7 +8,7 @@ define([
     '[text]!{w20-simple-theme}/templates/topbar.html',
 
     '{angular-sanitize}/angular-sanitize',
-    '{w20-ui}/modules/ui',
+    '{w20-core}/modules/ui',
     '{w20-core}/modules/culture',
     '{w20-core}/modules/utils'
 
