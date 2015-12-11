@@ -1,15 +1,32 @@
 module.exports = function(grunt) {
     'use strict';
 
-    require('jit-grunt')(grunt);
-
     grunt.initConfig({
-        jshint: {
-            static: {
-                src: ['modules/**/*.js']
+        clean: [
+            'bower_components/**'
+        ],
+        bower: {
+            install: {
+                options: {
+                    copy: false
+                }
+            }
+        },
+        connect: {
+            server: {
+                options: {
+                    port: grunt.option('port') || 9999,
+                    base: '.',
+                    keepalive: true
+                }
             }
         }
     });
 
-    grunt.registerTask('default', ['jshint']);
+    grunt.loadNpmTasks('grunt-bower-task');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+
+    grunt.loadNpmTasks('grunt-contrib-connect');
+
+    grunt.registerTask('default', ['clean', 'bower']);
 };
