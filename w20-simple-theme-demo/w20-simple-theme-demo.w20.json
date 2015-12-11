@@ -1,0 +1,27 @@
+{
+    "id": "w20-simple-theme-demo",
+    "name": "W20 simple Theme Demo",
+
+    "modules": {
+        "content": {
+            "path": "{w20-simple-theme-demo}/modules/content",
+            "autoload": true
+        },
+        "style": {
+            "path": "[css]!{w20-simple-theme-demo}/style/style.css",
+            "autoload": true
+        }
+    },
+
+    "i18n": {
+        "en": ["{w20-simple-theme-demo}/i18n/messages-en.json"],
+        "fr": ["{w20-simple-theme-demo}/i18n/messages-fr.json"]
+    },
+
+    "routes": {
+        "content":{
+            "templateUrl":"{w20-simple-theme-demo}/views/content.html",
+            "controller":"ContentController"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "w20-simple-theme",
+  "version": "3.1.0",
+  "ignore": [
+    ".*",
+    "*.iml",
+    "*.md",
+    "bower_components",
+    "coverage",
+    "node_modules",
+    "gruntfile.js",
+    "package.json"
+  ],
+  "dependencies": {
+    "w20": "~2.1",
+    "w20-bootstrap-3": "~2.1"
+  }
+}
