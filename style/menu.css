@@ -11,6 +11,14 @@
     cursor: pointer;
 }
 
+.navbar-right .logo {
+    background: url('../images/menu/logo_psa.png') no-repeat center;
+    width: 150px;
+    height: 45px;
+    float: right;
+    cursor: pointer;
+}
+
 .navbar-brand > .w20-environment-label {
     padding: 2px;
 }
