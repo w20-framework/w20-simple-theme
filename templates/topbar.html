@@ -11,8 +11,8 @@
                     </button>
                     <div class="navbar-brand">
                         <span class="label w20-environment-label environment-{{ envtype | lowercase }}" data-ng-hide="(envtype | uppercase).indexOf('PROD') == 0">{{ ('w20.menu.env.' + (envtype | lowercase)) | localize }}</span>
-                        <a data-ng-href="#!"><span data-ng-bind="{{ title }}"></span></a>
-                        <span class="subbrand" data-ng-bind="{{ description }}"></span>
+                        <a data-ng-href="#!/"><span data-ng-bind="{{ title }}"></span></a>
+                        <span class="subbrand">{{ description }}</span>
                     </div>
                 </div>
 
@@ -47,6 +47,9 @@
                             data-w20-include-replace
                             data-ng-if="navAction(navActionName).showFn()"
                             data-ng-init="action = navAction(navActionName)"></li>
+                        <li data-ng-if="!disableLogo">
+                            <a class="logo pull-right" data-ng-href="{{ logoUrl }}" data-tooltip="{{ logoUrl }}" data-tooltip-placement="bottom"></a>
+                        </li>
                     </ul>
                 </div>
             </div>
