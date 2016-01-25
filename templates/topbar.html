@@ -47,8 +47,13 @@
                             data-w20-include-replace
                             data-ng-if="navAction(navActionName).showFn()"
                             data-ng-init="action = navAction(navActionName)"></li>
-                        <li data-ng-if="!disableLogo">
-                            <a class="logo pull-right" data-ng-href="{{ logoUrl }}" data-tooltip="{{ logoUrl }}" data-tooltip-placement="bottom"></a>
+                        <li data-ng-if="logoImg" class="pull-right">
+                            <a class="logo"
+                               data-ng-href="{{ logoUrl }}"
+                               data-tooltip="{{ logoUrl }}"
+                               data-tooltip-placement="bottom">
+                                <img data-ng-src="{{ logoImg }}" alt="Logo missing">
+                            </a>
                         </li>
                     </ul>
                 </div>

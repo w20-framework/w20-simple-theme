@@ -16,9 +16,9 @@
                         "description": "URL for the top bar logo link",
                         "type": "string"
                     },
-                    "disableLogo": {
-                        "description": "Disable the default logo",
-                        "type": "boolean"
+                    "logoImg": {
+                        "description": "Specify the location of the logo",
+                        "type": "string"
                     },
                     "categories": {
                         "description": "Ordered array of displayed menu categories",
