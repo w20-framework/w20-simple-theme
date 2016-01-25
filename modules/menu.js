@@ -50,7 +50,7 @@ define([
                     scope.displayName = cultureService.displayName;
                     scope.envtype = environmentService.environment;
                     scope.logoUrl = _config.logoUrl;
-                    scope.disableLogo = _config.disableLogo;
+                    scope.logoImg = _config.logoImg;
 
                     scope.isTopbarDisplayed = function () {
                         return showTopbar;

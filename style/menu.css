@@ -12,10 +12,7 @@
 }
 
 .navbar-right .logo {
-    background: url('../images/menu/logo_psa.png') no-repeat center;
-    width: 150px;
-    height: 45px;
-    float: right;
+    padding-top: 10px;
     cursor: pointer;
 }
 
