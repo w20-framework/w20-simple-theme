@@ -12,7 +12,7 @@
                     <div class="navbar-brand">
                         <span class="label w20-environment-label environment-{{ envtype | lowercase }}" data-ng-hide="(envtype | uppercase).indexOf('PROD') == 0">{{ ('w20.menu.env.' + (envtype | lowercase)) | localize }}</span>
                         <a data-ng-href="#!"><span data-ng-bind="{{ title }}"></span></a>
-                        <span class="subbrand" data-ng-bind="{{ description }}"></span>
+                        <span class="subbrand">{{ description }}</span>
                     </div>
                 </div>
 
@@ -46,11 +46,19 @@
                             data-ng-include="navAction(navActionName).templateUrl | path"
                             data-w20-include-replace
                             data-ng-if="navAction(navActionName).showFn()"
-                            data-ng-init="action = navAction(navActionName)"></li>
+                            data-ng-init="action = navAction(navActionName)">
+                        </li>
+                        <li data-ng-if="logoImg" class="pull-right">
+                            <a class="logo"
+                               data-ng-href="{{ logoUrl }}"
+                               data-tooltip="{{ logoUrl }}"
+                               data-tooltip-placement="bottom">
+                                <img data-ng-src="{{ logoImg }}" alt="Logo missing">
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <!-- TODO allow customizable logo -->
         </div>
 
         <div class="w20-sidemenu" data-ng-show="showViews" data-ng-mouseleave="unpeekSection()">

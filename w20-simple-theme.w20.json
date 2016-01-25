@@ -16,6 +16,10 @@
                         "description": "URL for the top bar logo link",
                         "type": "string"
                     },
+                    "logoImg": {
+                        "description": "Specify the location of the logo",
+                        "type": "string"
+                    },
                     "categories": {
                         "description": "Ordered array of displayed menu categories",
                         "type": "array",

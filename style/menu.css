@@ -11,6 +11,11 @@
     cursor: pointer;
 }
 
+.navbar-right .logo {
+    padding-top: 10px;
+    cursor: pointer;
+}
+
 .navbar-brand > .w20-environment-label {
     padding: 2px;
 }
