@@ -27,8 +27,8 @@ define([
         w20SimpleThemeMenu = angular.module('w20SimpleThemeMenu', ['w20CoreCulture', 'w20CoreUtils', 'ngSanitize']),
         showTopbar = true;
 
-    w20SimpleThemeMenu.directive('w20Topbar', ['$route', 'EventService', 'DisplayService', 'MenuService', 'EnvironmentService', 'ApplicationService', 'SecurityExpressionService', 'CultureService', '$timeout',
-        function ($route, eventService, displayService, menuService, environmentService, applicationService, securityExpressionService, cultureService, $timeout) {
+    w20SimpleThemeMenu.directive('w20Topbar', ['$route', '$location', 'EventService', 'DisplayService', 'MenuService', 'EnvironmentService', 'ApplicationService', 'SecurityExpressionService', 'CultureService', '$timeout',
+        function ($route, $location, eventService, displayService, menuService, environmentService, applicationService, securityExpressionService, cultureService, $timeout) {
             function isRouteVisible(route) {
                 return !route.hidden && (typeof route.security === 'undefined' || securityExpressionService.evaluate(route.security));
             }
@@ -42,6 +42,7 @@ define([
                 restrict: 'A',
                 scope: true,
                 link: function (scope, iElement, iAttrs) {
+                    scope.homePath = $location.$$absUrl;
                     scope.hideViews = _config.hideViews || false;
                     scope.title = iAttrs.title || '\'' + applicationService.applicationId + '\'';
                     scope.description = iAttrs.subtitle || '';
