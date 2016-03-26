@@ -27,13 +27,11 @@ define([
         w20SimpleThemeMenu = angular.module('w20SimpleThemeMenu', ['w20CoreCulture', 'w20CoreUtils', 'ngSanitize']),
         showTopbar = true;
 
-    w20SimpleThemeMenu.directive('w20Topbar', ['$route', '$location', 'EventService', 'DisplayService', 'MenuService', 'EnvironmentService', 'ApplicationService', 'SecurityExpressionService', 'CultureService', '$timeout',
-        function ($route, $location, eventService, displayService, menuService, environmentService, applicationService, securityExpressionService, cultureService, $timeout) {
+    w20SimpleThemeMenu.directive('w20Topbar', ['$route', '$location', 'EventService', 'DisplayService', 'MenuService', 'EnvironmentService', 'ApplicationService', 'SecurityExpressionService', 'CultureService',
+        function ($route, $location, eventService, displayService, menuService, environmentService, applicationService, securityExpressionService, cultureService) {
             function isRouteVisible(route) {
                 return !route.hidden && (typeof route.security === 'undefined' || securityExpressionService.evaluate(route.security));
             }
-
-            var unpeekTimeoutPromise;
 
             return {
                 template: topbarTemplate,
@@ -42,9 +40,10 @@ define([
                 restrict: 'A',
                 scope: true,
                 link: function (scope, iElement, iAttrs) {
+                    scope.linkPrefix = $location.$$html5 ? '' : '#!';
                     scope.homePath = $location.$$absUrl;
                     scope.hideViews = _config.hideViews || false;
-                    scope.title = iAttrs.title || '\'' + applicationService.applicationId + '\'';
+                    scope.title = iAttrs.title || '';
                     scope.description = iAttrs.subtitle || '';
                     scope.navActions = menuService.getActions;
                     scope.navAction = menuService.getAction;
@@ -55,18 +54,6 @@ define([
 
                     scope.isTopbarDisplayed = function () {
                         return showTopbar;
-                    };
-
-                    scope.peekSection = function () {
-                        if (unpeekTimeoutPromise) {
-                            $timeout.cancel(unpeekTimeoutPromise);
-                            unpeekTimeoutPromise = null;
-                        }
-                        scope.showViews = true;
-                    };
-
-                    scope.unpeekSection = function () {
-                        scope.showViews = false;
                     };
 
                     scope.routeCategories = function () {

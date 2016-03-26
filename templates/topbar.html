@@ -12,33 +12,27 @@
                     <div class="navbar-brand">
                         <span class="label w20-environment-label environment-{{ envtype | lowercase }}" data-ng-hide="(envtype | uppercase).indexOf('PROD') == 0">{{ ('w20.menu.env.' + (envtype | lowercase)) | localize }}</span>
                         <a data-ng-href="{{ homePath }}"><span data-ng-bind="{{ title }}"></span></a>
-                        <span class="subbrand">{{ description }}</span>
+                        <span class="subbrand" data-ng-bind="{{ description }}"></span>
                     </div>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-responsive-collapse">
                     <ul class="nav navbar-nav navbar-left">
                         <li data-ng-if="!hideViews">
-                            <a id="w20-menu-topbar-section-views" data-ng-mouseover="peekSection()" class="w20-menu-item">
-                                <i class="fa fa-th-list"></i> {{ 'w20.menu.sidebar.views' | localize }}
+                            <a id="views-dropdown" role="button" data-toggle="dropdown" class="w20-menu-item" data-target="#">
+                                <i class="fa fa-th-list"></i> {{ 'w20.menu.sidebar.views' | localize }} <span class="caret"></span>
                             </a>
-                        </li>
-                        <li class="w20-sidemenu" id="w20-menu-topbar-section-views-collapse">
-                            <h1>
-                                {{ 'w20.menu.sidebar.views' | localize }}
-                            </h1>
-                            <div>
-                                <ul class="w20-sidemenu-category-list">
-                                    <li><i class="icon-home"></i> <a data-ng-href="{{ homePath }}" data-ng-click="closeSection()">{{ 'w20.menu.sidebar.home' | localize }}</a></li>
-                                    <li data-ng-repeat="route in topLevelRoutes()"><a data-ng-click="closeSection()" data-ng-href="{{route.path}}" data-ng-bind-html="displayName(route)"></a></li>
-                                    <li data-ng-repeat="category in routeCategories()">
-                                        {{ ('application.viewcategory.' + category) | localize }}
-                                        <ul class="w20-sidemenu-route-list">
-                                            <li data-ng-repeat="route in routesFromCategory(category) | orderBy:routeSortKey"><a data-ng-click="closeSection()" data-ng-href="{{route.path}}" data-ng-bind-html="displayName(route)"></a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
+                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                                <li><a data-ng-href="{{ homePath }}"><i class="fa fa-home"></i> {{ 'w20.menu.sidebar.home' | localize }}</a></li>
+                                <li class="divider"></li>
+                                <li data-ng-repeat="route in topLevelRoutes()"><a data-ng-href="{{ linkPrefix + route.path }}" data-ng-bind-html="displayName(route)"></a></li>
+                                <li class="dropdown-submenu" data-ng-repeat="category in routeCategories()">
+                                    <a href="#">{{ ('application.viewcategory.' + category) | localize }}</a>
+                                    <ul class="dropdown-menu">
+                                        <li data-ng-repeat="route in routesFromCategory(category) | orderBy:routeSortKey"><a data-ng-href="{{ linkPrefix + route.path }}" data-ng-bind-html="displayName(route)"></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right w20-actions">
@@ -57,24 +51,6 @@
                         </li>
                     </ul>
                 </div>
-            </div>
-        </div>
-
-        <div class="w20-sidemenu" data-ng-show="showViews" data-ng-mouseleave="unpeekSection()">
-            <h1>
-                {{ 'w20.menu.sidebar.views' | localize }}
-            </h1>
-            <div>
-                <ul class="w20-sidemenu-category-list">
-                    <li><i class="icon-home"></i> <a data-ng-href="{{ homePath }}" data-ng-click="closeSection()">{{ 'w20.menu.sidebar.home' | localize }}</a></li>
-                    <li data-ng-repeat="route in topLevelRoutes()"><a data-ng-click="closeSection()" data-ng-href="{{route.path}}" data-ng-bind-html="displayName(route)"></a></li>
-                    <li data-ng-repeat="category in routeCategories()">
-                        {{ ('application.viewcategory.' + category) | localize }}
-                        <ul class="w20-sidemenu-route-list">
-                            <li data-ng-repeat="route in routesFromCategory(category) | orderBy:routeSortKey"><a data-ng-click="closeSection()" data-ng-href="{{route.path}}" data-ng-bind-html="displayName(route)"></a></li>
-                        </ul>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>

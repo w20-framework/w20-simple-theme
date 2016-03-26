@@ -54,7 +54,7 @@
             }
         },
         "style": {
-            "path": "[css]!{w20-simple-theme}/style/menu",
+            "path": "[css]!{w20-simple-theme}/style/style",
             "autoload": true
         }
     },
