@@ -1,10 +1,14 @@
 ---
-title: "Overview"
-theme: "Simple theme"
+title: "Basics"
+name: "Simple"
 repo: "https://github.com/seedstack/w20-simple-theme"
 author: "SeedStack"
 description: "W20 theme providing a basic top-bar including a navigation menu and standard application controls."
 min-version: "15.7+"
+weight: -1
+image: screenshot-01.png
+zones:
+    - Themes
 menu:
     SimpleTheme:
         weight: 10
