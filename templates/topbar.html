@@ -34,22 +34,19 @@
                                 </li>
                             </ul>
                         </li>
-                    </ul>
-                    <ul class="nav navbar-nav navbar-right w20-actions">
                         <li data-ng-repeat="navActionName in navActions()"
                             data-ng-include="navAction(navActionName).templateUrl | path"
                             data-w20-include-replace
                             data-ng-if="navAction(navActionName).showFn()"
-                            data-ng-init="action = navAction(navActionName)"></li>
-                        <li data-ng-if="logoImg" class="pull-right">
-                            <a class="logo"
-                               data-ng-href="{{ logoUrl }}"
-                               data-tooltip="{{ logoUrl }}"
-                               data-tooltip-placement="bottom">
-                                <img data-ng-src="{{ logoImg }}" alt="Logo">
-                            </a>
+                            data-ng-init="action = navAction(navActionName)">
                         </li>
                     </ul>
+                    <div class="logo" data-ng-if="logo.image">
+                        <span class="logo-helper"></span>
+                        <a data-ng-href="{{ logo.link }}" data-uib-tooltip="{{ logo.tooltip || logo.link  || '' }}" data-tooltip-placement="left" target="{{ logo.target || '_self' }}">
+                            <img data-ng-src="{{ logo.image }}" alt="logo">
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

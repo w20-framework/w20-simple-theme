@@ -24,10 +24,10 @@ define([
     'use strict';
 
     var _config = module && module.config() || {},
-        w20SimpleThemeMenu = angular.module('w20SimpleThemeMenu', ['w20CoreCulture', 'w20CoreUtils', 'ngSanitize']),
+        w20SimpleThemeMain = angular.module('w20SimpleThemeMain', ['w20CoreCulture', 'w20CoreUtils', 'ngSanitize']),
         showTopbar = true;
 
-    w20SimpleThemeMenu.directive('w20Topbar', ['$route', '$location', 'EventService', 'DisplayService', 'MenuService', 'EnvironmentService', 'ApplicationService', 'SecurityExpressionService', 'CultureService',
+    w20SimpleThemeMain.directive('w20Topbar', ['$route', '$location', 'EventService', 'DisplayService', 'MenuService', 'EnvironmentService', 'ApplicationService', 'SecurityExpressionService', 'CultureService',
         function ($route, $location, eventService, displayService, menuService, environmentService, applicationService, securityExpressionService, cultureService) {
             function isRouteVisible(route) {
                 return !route.hidden && (typeof route.security === 'undefined' || securityExpressionService.evaluate(route.security));
@@ -49,8 +49,7 @@ define([
                     scope.navAction = menuService.getAction;
                     scope.displayName = cultureService.displayName;
                     scope.envtype = environmentService.environment;
-                    scope.logoUrl = _config.logoUrl;
-                    scope.logoImg = _config.logoImg;
+                    scope.logo = _config.logo;
 
                     scope.isTopbarDisplayed = function () {
                         return showTopbar;
@@ -97,7 +96,7 @@ define([
             };
         }]);
 
-    w20SimpleThemeMenu.run(['$rootScope', 'DisplayService', 'MenuService', function ($rootScope, displayService, menuService) {
+    w20SimpleThemeMain.run(['$rootScope', 'DisplayService', 'MenuService', function ($rootScope, displayService, menuService) {
         $rootScope.$on('$routeChangeSuccess', function (event, routeInfo) {
             if (routeInfo && routeInfo.$$route) {
                 switch (routeInfo.$$route.navigation) {
@@ -149,7 +148,7 @@ define([
     }]);
 
     return {
-        angularModules: ['w20SimpleThemeMenu'],
+        angularModules: ['w20SimpleThemeMain'],
         lifecycle: {
             pre: function (modules, fragments, callback) {
                 angular.element('body').addClass('w20-top-shift-padding w20-right-shift-padding w20-bottom-shift-padding w20-left-shift-padding');
