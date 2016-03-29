@@ -41,7 +41,6 @@ define([
                 scope: true,
                 link: function (scope, iElement, iAttrs) {
                     scope.linkPrefix = $location.$$html5 ? '' : '#!';
-                    scope.homePath = $location.$$absUrl;
                     scope.hideViews = _config.hideViews || false;
                     scope.title = iAttrs.title || '';
                     scope.description = iAttrs.subtitle || '';

@@ -11,7 +11,7 @@
                     </button>
                     <div class="navbar-brand">
                         <span class="label w20-environment-label environment-{{ envtype | lowercase }}" data-ng-hide="(envtype | uppercase).indexOf('PROD') == 0">{{ ('w20.menu.env.' + (envtype | lowercase)) | localize }}</span>
-                        <a data-ng-href="{{ homePath }}"><span data-ng-bind="{{ title }}"></span></a>
+                        <a data-ng-href="{{ linkPrefix + '/' }}"><span data-ng-bind="{{ title }}"></span></a>
                         <span class="subbrand" data-ng-bind="{{ description }}"></span>
                     </div>
                 </div>
@@ -23,7 +23,7 @@
                                 <i class="fa fa-th-list"></i> {{ 'w20.menu.sidebar.views' | localize }} <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                                <li><a data-ng-href="{{ homePath }}"><i class="fa fa-home"></i> {{ 'w20.menu.sidebar.home' | localize }}</a></li>
+                                <li><a data-ng-href="{{ linkPrefix + '/' }}"><i class="fa fa-home"></i> {{ 'w20.menu.sidebar.home' | localize }}</a></li>
                                 <li class="divider"></li>
                                 <li data-ng-repeat="route in topLevelRoutes()"><a data-ng-href="{{ linkPrefix + route.path }}" data-ng-bind-html="displayName(route)"></a></li>
                                 <li class="dropdown-submenu" data-ng-repeat="category in routeCategories()">
