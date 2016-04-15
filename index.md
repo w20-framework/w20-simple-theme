@@ -1,12 +1,13 @@
 ---
 title: "Basics"
-name: "Simple"
+name: "Simple theme"
 repo: "https://github.com/seedstack/w20-simple-theme"
-author: "SeedStack"
+author: "Adrien LAUER"
 description: "W20 theme providing a basic top-bar including a navigation menu and standard application controls."
-min-version: "15.7+"
+min-version: "16.4+"
 weight: -1
 image: screenshot-01.png
+date: 2015-07-27
 zones:
     - Themes
 menu:
@@ -32,7 +33,7 @@ Simply add it to your project `pom.xml`.
 
 ## Fragment declaration
 
-To include the theme, declare it in your fragment manifest (If you are using the bridge addon it will be included by default).
+To include the theme, declare it in your W20 application configuration file (If you are using the bridge addon it will be included by default).
 
 ```
 "bower_components/w20-simple-theme/w20-simple-theme.w20.json": {
