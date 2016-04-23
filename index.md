@@ -2,9 +2,9 @@
 title: "Basics"
 name: "Simple theme"
 repo: "https://github.com/seedstack/w20-simple-theme"
+date: 2016-01-20
 author: "Adrien LAUER"
 description: "W20 theme providing a basic top-bar including a navigation menu and standard application controls."
-min-version: "16.4+"
 weight: -1
 image: screenshot-01.png
 date: 2015-07-27
