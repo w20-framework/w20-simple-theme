@@ -1,9 +1,9 @@
-# Version 3.2.0 (?)
+# Version 3.2.0 (2016-04-27)
 
 * [new] Add support for topbar logo.
 * [chg] Replace the views by a more elegant multi-level dropdown.
-* [brk] The `menu` module has been renamed to `main`.
 * [chg] Update for SeedStack 16.4.
+* [brk] The `menu` module has been renamed to `main`.
 
 # Version 3.1.1 (2015-12-09)
 
