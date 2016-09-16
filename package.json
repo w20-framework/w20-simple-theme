@@ -1,6 +1,6 @@
 {
     "name": "w20-simple-theme",
-    "version": "3.2.0",
+    "version": "3.2.1",
     "description": "W20 simple theme",
     "main": "gruntfile.js",
     "repository": {

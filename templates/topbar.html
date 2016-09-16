@@ -25,11 +25,11 @@
                             <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
                                 <li><a data-ng-href="{{ linkPrefix + '/' }}"><i class="fa fa-home"></i> {{ 'w20.menu.sidebar.home' | localize }}</a></li>
                                 <li class="divider"></li>
-                                <li data-ng-repeat="route in topLevelRoutes()"><a data-ng-href="{{ linkPrefix + route.path }}" data-ng-bind-html="displayName(route)"></a></li>
+                                <li data-ng-repeat="route in topLevelRoutes()"><a data-ng-href="{{ linkPrefix + route.path }}" target="{{ route.target }}" data-ng-bind-html="displayName(route)"></a></li>
                                 <li class="dropdown-submenu" data-ng-repeat="category in routeCategories()">
                                     <a href="#">{{ ('application.viewcategory.' + category) | localize }}</a>
                                     <ul class="dropdown-menu">
-                                        <li data-ng-repeat="route in routesFromCategory(category) | orderBy:routeSortKey"><a data-ng-href="{{ linkPrefix + route.path }}" data-ng-bind-html="displayName(route)"></a></li>
+                                        <li data-ng-repeat="route in routesFromCategory(category) | orderBy:routeSortKey"><a data-ng-href="{{ linkPrefix + route.path }}" target="{{ route.target }}" data-ng-bind-html="displayName(route)"></a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -43,7 +43,7 @@
                     </ul>
                     <div class="logo" data-ng-if="logo.image">
                         <span class="logo-helper"></span>
-                        <a data-ng-href="{{ logo.link }}" data-uib-tooltip="{{ logo.tooltip || logo.link  || '' }}" data-tooltip-placement="left" target="{{ logo.target || '_self' }}">
+                        <a data-ng-href="{{ logo.link }}" data-uib-tooltip="{{ logo.tooltip || logo.link  }}" data-tooltip-placement="left" target="{{ logo.target }}">
                             <img data-ng-src="{{ logo.image }}" alt="logo">
                         </a>
                     </div>

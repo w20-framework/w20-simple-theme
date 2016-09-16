@@ -1,3 +1,8 @@
+# Version 3.2.1 (2016-09-16)
+
+* [fix] Fix menu links which were not honoring the route target attribute. 
+* [fix] Fix topbar logo link which was reloading the whole application when in HTML5 mode.
+
 # Version 3.2.0 (2016-04-27)
 
 * [new] Add support for topbar logo.
