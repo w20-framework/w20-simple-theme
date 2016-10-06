@@ -27,8 +27,8 @@ define([
         w20SimpleThemeMain = angular.module('w20SimpleThemeMain', ['w20CoreCulture', 'w20CoreUtils', 'ngSanitize']),
         showTopbar = true;
 
-    w20SimpleThemeMain.directive('w20Topbar', ['$route', '$location', 'EventService', 'DisplayService', 'MenuService', 'EnvironmentService', 'ApplicationService', 'SecurityExpressionService', 'CultureService',
-        function ($route, $location, eventService, displayService, menuService, environmentService, applicationService, securityExpressionService, cultureService) {
+    w20SimpleThemeMain.directive('w20Topbar', ['$route', '$location', 'EventService', 'DisplayService', 'MenuService', 'EnvironmentService', 'ApplicationService', 'SecurityExpressionService', 'CultureService', 'NavigationService',
+        function ($route, $location, eventService, displayService, menuService, environmentService, applicationService, securityExpressionService, cultureService, navigationService) {
             function isRouteVisible(route) {
                 return !route.hidden && (typeof route.security === 'undefined' || securityExpressionService.evaluate(route.security));
             }
@@ -40,7 +40,6 @@ define([
                 restrict: 'A',
                 scope: true,
                 link: function (scope, iElement, iAttrs) {
-                    scope.linkPrefix = $location.$$html5 ? '' : '#!';
                     scope.hideViews = _config.hideViews || false;
                     scope.title = iAttrs.title || '';
                     scope.description = iAttrs.subtitle || '';
@@ -48,6 +47,7 @@ define([
                     scope.navAction = menuService.getAction;
                     scope.displayName = cultureService.displayName;
                     scope.envtype = environmentService.environment;
+                    scope.buildLink = navigationService.buildLink;
                     scope.logo = _config.logo;
 
                     scope.isTopbarDisplayed = function () {

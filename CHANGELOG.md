@@ -1,3 +1,7 @@
+# Version 3.2.2 (2016-10-06)
+
+* [fix] Fix topbar links when application has a non-empty base href.
+
 # Version 3.2.1 (2016-09-16)
 
 * [fix] Fix menu links which were not honoring the route target attribute. 
