@@ -16,19 +16,8 @@ menu:
         weight: 10
 ---
 
-There are two ways of adding this theme to your application, depending how your W20 frontend is handled.
-
-# Standalone frontend
-
-In the case of a standalone frontend, you need to add the `w20-simple-theme` to your `bower.json` file. Check for the latest release [here](https://github.com/seedstack/w20-simple-theme/releases).
-
-# JAR-served frontend
-
-If the frontend files are served from resource JARs, the W20-bridge add-on packages this theme in the following artifact:
- 
-{{< dependency g="org.seedstack.addons.w20" a="w20-bridge-web-simple-theme" >}}
-
-Simply add it to your project `pom.xml`.
+To install the theme, you simply need to add the `w20-simple-theme` to your `bower.json` file. 
+Check for the latest release [here](https://github.com/seedstack/w20-simple-theme/releases).
 
 # Configuration
 
