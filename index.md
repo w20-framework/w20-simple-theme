@@ -5,7 +5,7 @@ repo: "https://github.com/seedstack/w20-simple-theme"
 date: 2016-01-20
 author: "Adrien LAUER"
 description: "W20 theme providing a basic top-bar including a navigation menu and standard application controls."
-demo: "http://seedstack.org/w20-simple-theme"
+demo: "http://w20-framework.github.io/w20-simple-theme"
 weight: -1
 image: screenshot-01.png
 date: 2015-07-27
