@@ -1,3 +1,9 @@
+# Version 3.3.0 (2018-03-21)
+
+* [brk] Switched from Bower to NPM package manager
+* [chg] Update W20 to ^2.4.0
+* [chg] Update W20 Bootstrap 3 to ^2.3.0
+
 # Version 3.2.2 (2016-10-06)
 
 * [fix] Fix topbar links when application has a non-empty base href.

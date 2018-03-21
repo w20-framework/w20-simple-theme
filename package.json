@@ -1,31 +1,33 @@
 {
-    "name": "w20-simple-theme",
-    "version": "3.3.0-rc.1",
-    "description": "W20 simple theme",
-    "main": "gruntfile.js",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/seedstack/w20-simple-theme.git"
-    },
-    "keywords": [
-        "w20",
-        "theme"
-    ],
-    "author": "Adrien LAUER",
-    "license": "Mozilla Public License, version 2.0",
-    "bugs": {
-        "url": "https://github.com/seedstack/w20-simple-theme/issues"
-    },
-    "scripts": {
-        "test": ""
-    },
-    "devDependencies": {
-        "grunt": "~0.4",
-        "grunt-contrib-jshint": "~1.1.0",
-        "jit-grunt": "~0.9.1"
-    },
-    "dependencies": {
-        "w20":"~2.4.0-rc",
-        "w20-bootstrap-3":"~2.3.0-rc"
-    }
+  "name": "@w20/w20-simple-theme",
+  "version": "3.3.0",
+  "description": "W20 simple theme",
+  "license": "MPL-2.0",
+  "main": "gruntfile.js",
+  "keywords": [
+    "w20",
+    "theme"
+  ],
+  "bugs": {
+    "url": "https://github.com/seedstack/w20-simple-theme/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4",
+    "grunt-contrib-jshint": "~1.1.0",
+    "jit-grunt": "~0.9.1"
+  },
+  "dependencies": {
+    "@w20/w20": "^2.4.0",
+    "@w20/w20-bootstrap-3": "^2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/w20-framework/w20-simple-theme.git"
+  },
+  "author": "W20 team",
+  "contributors": [
+    "Adrien LAUER <adrien.lauer@mpsa.com>",
+    "Kavi RAMYEAD <kavi.ramyead@ext.mpsa.com>",
+    "Jose Manuel MARTINEZ LAINEZ <josemanuel.martinez1@ext.mpsa.com>"
+  ]
 }
