@@ -19,10 +19,10 @@
                 <div class="collapse navbar-collapse navbar-responsive-collapse">
                     <ul class="nav navbar-nav navbar-left">
                         <li data-ng-if="!hideViews">
-                            <a id="views-dropdown" role="button" data-toggle="dropdown" class="w20-menu-item" data-target="#">
+                            <a id="views-dropdown" role="button" data-toggle="dropdown" class="w20-menu-item" aria-haspopup="true" aria-expanded="true">
                                 <i class="fa fa-th-list"></i> {{ 'w20.menu.sidebar.views' | localize }} <span class="caret"></span>
                             </a>
-                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="views-dropdown">
                                 <li><a data-ng-href="{{ buildLink('/') }}"><i class="fa fa-home"></i> {{ 'w20.menu.sidebar.home' | localize }}</a></li>
                                 <li class="divider"></li>
                                 <li data-ng-repeat="route in topLevelRoutes()"><a data-ng-href="{{ buildLink(route.path) }}" target="{{ route.target }}" data-ng-bind-html="displayName(route)"></a></li>

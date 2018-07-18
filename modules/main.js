@@ -25,7 +25,8 @@ define([
 
     var _config = module && module.config() || {},
         w20SimpleThemeMain = angular.module('w20SimpleThemeMain', ['w20CoreCulture', 'w20CoreUtils', 'ngSanitize']),
-        showTopbar = true;
+        showTopbar = true,
+        includes = _.contains || _.includes;
 
     w20SimpleThemeMain.directive('w20Topbar', ['$route', '$location', 'EventService', 'DisplayService', 'MenuService', 'EnvironmentService', 'ApplicationService', 'SecurityExpressionService', 'CultureService', 'NavigationService',
         function ($route, $location, eventService, displayService, menuService, environmentService, applicationService, securityExpressionService, cultureService, navigationService) {
@@ -62,7 +63,7 @@ define([
                                 return null;
                             }
                         }), function (elt) {
-                            return elt !== null && (typeof _config.categories !== 'undefined' ? _.contains(_config.categories, elt) : true);
+                            return elt !== null && (typeof _config.categories !== 'undefined' ? includes(_config.categories, elt) : true);
                         })), function (elt) {
                             if (typeof _config.categories !== 'undefined') {
                                 return _.indexOf(_config.categories, elt);

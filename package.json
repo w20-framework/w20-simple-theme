@@ -1,6 +1,6 @@
 {
   "name": "@w20/w20-simple-theme",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "W20 simple theme",
   "license": "MPL-2.0",
   "main": "gruntfile.js",

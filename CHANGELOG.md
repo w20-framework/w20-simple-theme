@@ -1,3 +1,8 @@
+# Version 3.3.1 (2018-07-18)
+
+* [fix] Fix incompatibility with W20 2.4.2
+* [fix] Fix views menu dropdown error 
+
 # Version 3.3.0 (2018-03-21)
 
 * [brk] Switched from Bower to NPM package manager
